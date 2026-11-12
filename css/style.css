@@ -1,0 +1,1202 @@
+/* ==========================================================================
+   SEZER ARSLAN — PORTFOLYO 2026 (css/style.css)
+   Referans Tasarım: "NIKO KANE" Editoryal & İllüstratif Portfolyo
+   Renk Paleti:
+   - Warm Cream (Ana Arka Plan): #f6f1e6 / #efe8d8
+   - Ink Black (Koyu Şeritler & Tipografi): #141517
+   - Mustard Yellow (Vurgu & Butonlar): #eab32e
+   - Terracotta Red (İkincil Vurgu & İllüstrasyon): #d64527
+   ========================================================================== */
+
+:root {
+  --cream: #f6f1e6;
+  --cream-alt: #efe8d8;
+  --cream-card: #faf6ee;
+  --ink: #141517;
+  --ink-soft: #3d3e42;
+  --ink-muted: #686660;
+  --yellow: #eab32e;
+  --yellow-hover: #df9f14;
+  --terracotta: #d64527;
+  --border-line: rgba(20, 21, 23, 0.14);
+  --border-light: rgba(246, 241, 230, 0.16);
+
+  --font-display: 'Anton', Impact, 'Arial Black', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-script: 'Caveat', 'Segoe Script', cursive;
+  --font-sans: 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nk-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ==========================================================================
+   ORTAK TİPOGRAFİ VE BUTON BİLEŞENLERİ
+   ========================================================================== */
+.nk-kicker {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 10px;
+}
+
+.nk-kicker-light {
+  color: var(--cream);
+  opacity: 0.78;
+}
+
+.nk-kicker-cream {
+  color: var(--cream);
+  opacity: 0.9;
+}
+
+.nk-kicker-dark {
+  color: var(--ink);
+}
+
+.nk-serif-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.nk-serif-heading em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 500;
+}
+
+.nk-text-light {
+  color: var(--cream);
+}
+
+.nk-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nk-pill-yellow {
+  background-color: var(--yellow);
+  color: var(--ink);
+}
+
+.nk-pill-yellow:hover {
+  background-color: var(--yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(234, 179, 46, 0.35);
+}
+
+.nk-pill-dark {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
+.nk-pill-dark:hover {
+  background-color: #292b30;
+  transform: translateY(-2px);
+}
+
+.nk-pill-outline {
+  background-color: transparent;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+}
+
+.nk-pill-outline:hover {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
+.nk-arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   ÜST GEZİNME ÇUBUĞU (TOP NAVBAR)
+   ========================================================================== */
+.nk-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(246, 241, 230, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-line);
+}
+
+.nk-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 76px;
+}
+
+.nk-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.nk-logo-light {
+  color: var(--cream);
+}
+
+.nk-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.nk-starburst {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.nk-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nk-nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 2px;
+  transition: color 0.2s ease;
+}
+
+.nk-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2.5px;
+  background-color: var(--terracotta);
+  transition: width 0.22s ease;
+}
+
+.nk-nav a:hover::after,
+.nk-nav a.active::after {
+  width: 100%;
+}
+
+.nk-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nk-lang-btn {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nk-lang-btn:hover {
+  background-color: var(--ink);
+  color: var(--cream);
+}
+
+/* ==========================================================================
+   BÖLÜM 1: HERO (DEV İSİM & PORTRE)
+   ========================================================================== */
+.nk-hero {
+  padding: 48px 0 64px;
+  border-bottom: 1px solid var(--border-line);
+}
+
+.nk-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.nk-title-stack-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.nk-giant-name {
+  font-family: var(--font-display);
+  font-size: clamp(4.6rem, 9.8vw, 8.2rem);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.nk-giant-name span {
+  display: block;
+}
+
+.nk-stamp-badge {
+  width: 108px;
+  height: 108px;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+.nk-stamp-svg {
+  width: 100%;
+  height: 100%;
+  animation: slowSpin 22s linear infinite;
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nk-hero-underline {
+  width: 100%;
+  max-width: 340px;
+  height: 18px;
+  display: block;
+  margin: 8px 0 18px;
+}
+
+.nk-hero-desc {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  max-width: 400px;
+  margin-bottom: 24px;
+}
+
+/* Sağ Sütun: Portre Sahnesi */
+.nk-portrait-stage {
+  position: relative;
+  max-width: 470px;
+  margin: 0 auto;
+  padding: 28px 34px 16px 24px;
+}
+
+.nk-yellow-backdrop {
+  position: absolute;
+  top: 38px;
+  left: 36px;
+  right: 48px;
+  bottom: 16px;
+  background-color: var(--yellow);
+  transform: rotate(-7deg);
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.nk-portrait-frame {
+  position: relative;
+  z-index: 2;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 22px 45px rgba(20, 21, 23, 0.22);
+  border: 3px solid var(--ink);
+  background-color: var(--ink);
+}
+
+.nk-portrait-img {
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.nk-doodle-eye {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  width: 124px;
+  height: auto;
+  z-index: 4;
+}
+
+.nk-doodle-brush {
+  position: absolute;
+  bottom: 66px;
+  right: -18px;
+  width: 150px;
+  height: auto;
+  z-index: 3;
+}
+
+.nk-dot-matrix {
+  position: absolute;
+  right: 2px;
+  bottom: 18px;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(4, 6px);
+  gap: 9px;
+}
+
+.nk-dot-matrix span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ink);
+}
+
+/* ==========================================================================
+   BÖLÜM 2: HAKKIMDA (ABOUT ME)
+   ========================================================================== */
+.nk-about {
+  padding: 68px 0;
+  background-color: var(--cream-card);
+  border-bottom: 1px solid var(--border-line);
+}
+
+.nk-about-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.nk-about-photo-col {
+  position: relative;
+  padding-left: 28px;
+}
+
+.nk-about-red-strip {
+  position: absolute;
+  left: 0;
+  top: -18px;
+  bottom: 24px;
+  width: 72px;
+  background-color: var(--terracotta);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.nk-doodle-crown {
+  position: absolute;
+  top: -28px;
+  left: 88px;
+  width: 54px;
+  height: auto;
+  z-index: 3;
+  transform: rotate(-8deg);
+}
+
+.nk-about-image-box {
+  position: relative;
+  z-index: 2;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  box-shadow: 0 18px 40px rgba(20, 21, 23, 0.16);
+}
+
+.nk-about-image-box img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+
+.nk-scribble-line {
+  width: 110px;
+  height: 20px;
+  display: block;
+  margin: 8px 0 16px;
+}
+
+.nk-body-text {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+  max-width: 540px;
+}
+
+.nk-body-text strong {
+  color: var(--ink);
+}
+
+.nk-signature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.nk-signature {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  color: var(--ink);
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+.nk-location-badge {
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  border: 2px dashed rgba(20, 21, 23, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  color: var(--ink);
+  transform: rotate(6deg);
+  box-shadow: 0 10px 24px rgba(234, 179, 46, 0.3);
+}
+
+/* ==========================================================================
+   BÖLÜM 3: YETENEKLER & ARAÇLAR (DARK CHARCOAL BAND)
+   ========================================================================== */
+.nk-services-band {
+  background-color: var(--ink);
+  color: var(--cream);
+  padding: 64px 0;
+}
+
+.nk-services-grid {
+  display: grid;
+  grid-template-columns: 1.05fr repeat(4, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+.nk-scribble-yellow {
+  width: 130px;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.nk-service-card {
+  border-left: 1px solid var(--border-light);
+  padding-left: 22px;
+}
+
+.nk-service-icon {
+  height: 36px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.nk-service-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.nk-service-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+
+.nk-service-card p {
+  font-size: 0.84rem;
+  color: rgba(246, 241, 230, 0.76);
+  line-height: 1.58;
+}
+
+.nk-service-card strong {
+  color: var(--yellow);
+}
+
+/* ==========================================================================
+   BÖLÜM 4: PROJELER (SELECTED WORK + DETAY PANOLARI)
+   ========================================================================== */
+.nk-projects-section {
+  padding: 72px 0;
+  background-color: var(--cream);
+}
+
+.nk-selected-grid {
+  display: grid;
+  grid-template-columns: 0.9fr repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--border-line);
+  margin-bottom: 56px;
+}
+
+.nk-scribble-red {
+  width: 120px;
+  height: 20px;
+  display: block;
+  margin-top: 8px;
+}
+
+.nk-work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nk-work-thumb {
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  background-color: var(--ink);
+}
+
+.nk-work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.nk-work-thumb.nk-pixel-thumb img {
+  object-fit: contain;
+  background-color: #050d24;
+}
+
+.nk-work-thumb:hover img {
+  transform: scale(1.04);
+}
+
+.nk-work-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  padding-top: 4px;
+}
+
+.nk-work-meta h3 {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.nk-work-meta p {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.nk-work-arrow {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--terracotta);
+  transition: transform 0.2s ease;
+}
+
+.nk-work-meta:hover .nk-work-arrow {
+  transform: translateX(4px);
+}
+
+/* Proje Detay Panoları */
+.nk-project-details-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.nk-detail-board {
+  background-color: var(--cream-card);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 36px 40px;
+  box-shadow: 8px 8px 0 var(--ink);
+  scroll-margin-top: 96px;
+}
+
+.nk-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-line);
+}
+
+.nk-project-num {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+  margin-bottom: 4px;
+}
+
+.nk-detail-title-group h3 {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.nk-role-tag {
+  display: inline-block;
+  background-color: var(--yellow);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.nk-detail-desc {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  max-width: 820px;
+  margin-bottom: 22px;
+}
+
+.nk-single-media {
+  margin: 20px 0;
+  max-width: 820px;
+}
+
+.pm-image-card,
+.pm-video-card {
+  background-color: var(--ink);
+  border-radius: 12px;
+  padding: 8px;
+  border: 2px solid var(--ink);
+  overflow: hidden;
+}
+
+.pm-image-card img {
+  width: 100%;
+  height: 290px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #1f2224;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.pm-image-card img:hover {
+  transform: scale(1.02);
+}
+
+.nk-wide-frame img {
+  height: auto;
+  max-height: 430px;
+  background-color: #282828;
+}
+
+.nk-pixel-card img {
+  background-color: #050d24;
+}
+
+.pixel-art-img {
+  image-rendering: pixelated;
+}
+
+.cute-office-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.65fr;
+  gap: 18px;
+  align-items: stretch;
+  margin: 20px 0;
+}
+
+.co-char-card img {
+  background-color: #3f3f3f;
+  object-fit: contain;
+}
+
+.co-env-card img {
+  background-color: #1f2224;
+  object-fit: cover;
+}
+
+.project-media-showcase {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  align-items: stretch;
+  margin: 20px 0;
+}
+
+.video-responsive-frame {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-responsive-frame iframe,
+.native-video-player {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+}
+
+.yt-thumbnail-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.yt-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  filter: brightness(0.84);
+}
+
+.yt-thumbnail-player:hover .yt-thumb-img {
+  transform: scale(1.04);
+  filter: brightness(0.96);
+}
+
+.yt-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(20, 21, 23, 0.2) 0%, rgba(20, 21, 23, 0.65) 100%);
+}
+
+.yt-play-circle {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  border: 3px solid var(--ink);
+  color: var(--ink);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.yt-thumbnail-player:hover .yt-play-circle {
+  transform: scale(1.1);
+  background-color: var(--cream);
+}
+
+.nk-detail-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.nk-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nk-tag-row span {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background-color: var(--cream-alt);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   BÖLÜM 5: EĞİTİM & DENEYİM (TERRACOTTA KIRMIZI BANT)
+   ========================================================================== */
+.nk-terracotta-band {
+  background-color: var(--terracotta);
+  color: var(--cream);
+  padding: 64px 0;
+}
+
+.nk-terracotta-grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.nk-terra-col {
+  border-left: 1px solid rgba(246, 241, 230, 0.26);
+  padding-left: 22px;
+}
+
+.nk-terra-date {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--yellow);
+  margin-bottom: 6px;
+}
+
+.nk-terra-col h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+
+.nk-terra-col p {
+  font-size: 0.86rem;
+  color: rgba(246, 241, 230, 0.9);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   BÖLÜM 6: İLETİŞİM (MUSTARD YELLOW CTA BAND)
+   ========================================================================== */
+.nk-yellow-cta {
+  background-color: var(--yellow);
+  color: var(--ink);
+  padding: 60px 0;
+  border-top: 2px solid var(--ink);
+}
+
+.nk-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 0.75fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.nk-cta-heading {
+  font-size: clamp(2.2rem, 3.8vw, 3.3rem);
+}
+
+.nk-cta-center p {
+  font-size: 0.96rem;
+  color: var(--ink);
+  margin-bottom: 18px;
+  max-width: 440px;
+}
+
+.nk-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nk-cta-art {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nk-hand-svg {
+  width: 220px;
+  height: auto;
+}
+
+/* ==========================================================================
+   ALT BİLGİ (DARK CHARCOAL FOOTER)
+   ========================================================================== */
+.nk-footer {
+  background-color: var(--ink);
+  color: var(--cream);
+  padding: 56px 0 28px;
+}
+
+.nk-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr 1fr 0.8fr;
+  gap: 28px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nk-footer-brand p {
+  font-size: 0.84rem;
+  color: rgba(246, 241, 230, 0.72);
+  margin-top: 12px;
+  max-width: 280px;
+}
+
+.nk-footer-col h4 {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--yellow);
+  margin-bottom: 12px;
+}
+
+.nk-footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nk-footer-col a,
+.nk-footer-col span {
+  font-size: 0.84rem;
+  color: rgba(246, 241, 230, 0.82);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nk-footer-col a:hover {
+  color: var(--yellow);
+}
+
+.nk-footer-stamp {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nk-footer-circle {
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(246, 241, 230, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  color: var(--cream);
+}
+
+.nk-footer-circle strong {
+  color: var(--yellow);
+  font-size: 0.9rem;
+  margin-top: 3px;
+}
+
+.nk-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 22px;
+  font-size: 0.78rem;
+  color: rgba(246, 241, 230, 0.6);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   LIGHTBOX (TAM EKRAN GÖRSEL İNCELEME) & BAŞA DÖN BUTONU
+   ========================================================================== */
+.hidden {
+  display: none !important;
+}
+
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(20, 21, 23, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  cursor: zoom-out;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 86vh;
+  border-radius: 12px;
+  border: 3px solid var(--cream);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.8);
+  object-fit: contain;
+  background-color: #141517;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background-color: var(--terracotta);
+  color: var(--cream);
+  transform: scale(1.08);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 150;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background-color: var(--yellow);
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--ink);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, background-color 0.2s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--terracotta);
+  color: var(--cream);
+}
+
+/* ==========================================================================
+   DUYARLI (RESPONSIVE) TASARIM
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .nk-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nk-selected-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nk-terracotta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nk-cta-grid {
+    grid-template-columns: 1fr;
+  }
+  .nk-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-media-showcase,
+  .cute-office-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nk-nav {
+    display: none;
+  }
+  .nk-hero-grid,
+  .nk-about-grid,
+  .nk-services-grid,
+  .nk-selected-grid,
+  .nk-terracotta-grid,
+  .nk-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .nk-detail-board {
+    padding: 24px 20px;
+  }
+}
